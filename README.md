@@ -27,7 +27,7 @@ export FLATKEY_IMAGE_MODEL="gpt-image-1"
 
 ## Samples
 
-### nodejs
+### [nodejs](nodejs/)
 
 ```bash
 cd nodejs
@@ -35,7 +35,7 @@ npm install
 npm start
 ```
 
-### python
+### [python](python/)
 
 ```bash
 cd python
@@ -43,7 +43,7 @@ python3 -m pip install -r requirements.txt
 python3 main.py
 ```
 
-### curl
+### [curl](curl/)
 
 ```bash
 cd curl
@@ -51,7 +51,7 @@ chmod +x chat.sh
 ./chat.sh
 ```
 
-### image-buddy
+### [image-buddy](image-buddy/)
 
 ```bash
 cd image-buddy

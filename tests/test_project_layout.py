@@ -53,6 +53,18 @@ class ProjectLayoutTest(unittest.TestCase):
             with self.subTest(name=name):
                 self.assertIn(name, content)
 
+    def test_readme_links_to_sample_directories(self):
+        content = read("README.md")
+        expected_links = [
+            "[nodejs](nodejs/)",
+            "[python](python/)",
+            "[curl](curl/)",
+            "[image-buddy](image-buddy/)",
+        ]
+        for link in expected_links:
+            with self.subTest(link=link):
+                self.assertIn(link, content)
+
     def test_readme_links_languages_and_star_badge(self):
         content = read("README.md")
         for language_readme in [
