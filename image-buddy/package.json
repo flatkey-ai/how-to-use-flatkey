@@ -1,0 +1,12 @@
+{
+  "name": "flatkey-image-buddy-sample",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node generate-image.mjs"
+  },
+  "dependencies": {
+    "openai": "^6.0.0"
+  }
+}

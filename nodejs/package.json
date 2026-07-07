@@ -1,0 +1,12 @@
+{
+  "name": "flatkey-nodejs-sample",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node index.mjs"
+  },
+  "dependencies": {
+    "openai": "^6.0.0"
+  }
+}
