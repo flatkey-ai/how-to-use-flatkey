@@ -1,31 +1,31 @@
-# How to Use Flatkey
+# Como usar Flatkey
 
 [![GitHub stars](https://img.shields.io/github/stars/flatkey-ai/how-to-use-flatkey?style=social)](https://github.com/flatkey-ai/how-to-use-flatkey/stargazers)
 
-Languages: English | [日本語](README.jp.md) | [中文](README.cn.md) | [Español](README.es.md) | [Português](README.pt.md)
+Idiomas: [English](README.md) | [日本語](README.jp.md) | [中文](README.cn.md) | Español | [Português](README.pt.md)
 
-Sample projects for calling Flatkey through the OpenAI-compatible router.
+Proyectos de ejemplo para llamar a Flatkey mediante el router compatible con OpenAI.
 
-## Setup
+## Configuracion
 
 ```bash
 export FLATKEY_AI_KEY="sk-..."
 ```
 
-All samples use:
+Todos los ejemplos usan:
 
 ```text
 https://router.flatkey.ai/v1
 ```
 
-Optional overrides:
+Valores opcionales:
 
 ```bash
 export FLATKEY_CHAT_MODEL="gpt-5.5"
 export FLATKEY_IMAGE_MODEL="gpt-image-1"
 ```
 
-## Samples
+## Ejemplos
 
 ### nodejs
 
@@ -59,9 +59,9 @@ npm install
 npm start -- "a friendly robot holding a Flatkey keycard"
 ```
 
-The image sample writes `output.png` when the API returns base64 image data.
+El ejemplo de imagen escribe `output.png` cuando la API devuelve datos de imagen en base64.
 
-## Verify Without API Calls
+## Verificar sin llamadas API
 
 ```bash
 python3 -m unittest tests.test_project_layout -v
@@ -71,6 +71,6 @@ node --check image-buddy/generate-image.mjs
 bash -n curl/chat.sh
 ```
 
-## Star Monitoring
+## Monitoreo de stars
 
-This repository includes a GitHub Actions workflow that records the current GitHub star count in `stars.json` every day and on manual runs.
+Este repositorio incluye un workflow de GitHub Actions que registra el conteo actual de GitHub stars en `stars.json` cada dia y en ejecuciones manuales.

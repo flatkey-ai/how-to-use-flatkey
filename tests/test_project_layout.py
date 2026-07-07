@@ -13,8 +13,14 @@ class ProjectLayoutTest(unittest.TestCase):
     def test_required_files_exist(self):
         required = [
             "README.md",
+            "README.jp.md",
+            "README.cn.md",
+            "README.es.md",
+            "README.pt.md",
             ".env.example",
             ".gitignore",
+            "stars.json",
+            ".github/workflows/star-monitor.yml",
             "nodejs/package.json",
             "nodejs/index.mjs",
             "python/requirements.txt",
@@ -45,6 +51,44 @@ class ProjectLayoutTest(unittest.TestCase):
         for name in ["nodejs", "python", "curl", "image-buddy"]:
             with self.subTest(name=name):
                 self.assertIn(name, content)
+
+    def test_readme_links_languages_and_star_badge(self):
+        content = read("README.md")
+        for language_readme in [
+            "README.jp.md",
+            "README.cn.md",
+            "README.es.md",
+            "README.pt.md",
+        ]:
+            with self.subTest(language_readme=language_readme):
+                self.assertIn(language_readme, content)
+        self.assertIn("github/stars/flatkey-ai/how-to-use-flatkey", content)
+
+    def test_localized_readmes_keep_sample_commands(self):
+        for language_readme in [
+            "README.jp.md",
+            "README.cn.md",
+            "README.es.md",
+            "README.pt.md",
+        ]:
+            content = read(language_readme)
+            with self.subTest(language_readme=language_readme):
+                self.assertIn("FLATKEY_AI_KEY", content)
+                self.assertIn("https://router.flatkey.ai/v1", content)
+                self.assertIn("nodejs", content)
+                self.assertIn("python", content)
+                self.assertIn("curl", content)
+                self.assertIn("image-buddy", content)
+
+    def test_star_monitor_workflow_updates_stars_json(self):
+        workflow = read(".github/workflows/star-monitor.yml")
+        stars = read("stars.json")
+        self.assertIn("schedule:", workflow)
+        self.assertIn("workflow_dispatch:", workflow)
+        self.assertIn("stargazers_count", workflow)
+        self.assertIn("stars.json", workflow)
+        self.assertIn('"repository": "flatkey-ai/how-to-use-flatkey"', stars)
+        self.assertIn('"history"', stars)
 
 
 if __name__ == "__main__":

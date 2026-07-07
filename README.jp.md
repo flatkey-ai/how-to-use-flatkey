@@ -1,31 +1,31 @@
-# How to Use Flatkey
+# Flatkey の使い方
 
 [![GitHub stars](https://img.shields.io/github/stars/flatkey-ai/how-to-use-flatkey?style=social)](https://github.com/flatkey-ai/how-to-use-flatkey/stargazers)
 
-Languages: English | [日本語](README.jp.md) | [中文](README.cn.md) | [Español](README.es.md) | [Português](README.pt.md)
+言語: [English](README.md) | 日本語 | [中文](README.cn.md) | [Español](README.es.md) | [Português](README.pt.md)
 
-Sample projects for calling Flatkey through the OpenAI-compatible router.
+OpenAI 互換ルーター経由で Flatkey を呼び出すサンプルプロジェクトです。
 
-## Setup
+## セットアップ
 
 ```bash
 export FLATKEY_AI_KEY="sk-..."
 ```
 
-All samples use:
+すべてのサンプルは次の URL を使います。
 
 ```text
 https://router.flatkey.ai/v1
 ```
 
-Optional overrides:
+任意の上書き設定:
 
 ```bash
 export FLATKEY_CHAT_MODEL="gpt-5.5"
 export FLATKEY_IMAGE_MODEL="gpt-image-1"
 ```
 
-## Samples
+## サンプル
 
 ### nodejs
 
@@ -59,9 +59,9 @@ npm install
 npm start -- "a friendly robot holding a Flatkey keycard"
 ```
 
-The image sample writes `output.png` when the API returns base64 image data.
+画像 API が base64 データを返す場合、`image-buddy` は `output.png` を保存します。
 
-## Verify Without API Calls
+## API 呼び出しなしの検証
 
 ```bash
 python3 -m unittest tests.test_project_layout -v
@@ -71,6 +71,6 @@ node --check image-buddy/generate-image.mjs
 bash -n curl/chat.sh
 ```
 
-## Star Monitoring
+## Star モニタリング
 
-This repository includes a GitHub Actions workflow that records the current GitHub star count in `stars.json` every day and on manual runs.
+このリポジトリには GitHub Actions ワークフローが含まれます。毎日または手動実行で現在の GitHub star 数を `stars.json` に記録します。
