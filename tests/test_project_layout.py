@@ -17,6 +17,7 @@ class ProjectLayoutTest(unittest.TestCase):
             "README.cn.md",
             "README.es.md",
             "README.pt.md",
+            "LICENSE",
             ".env.example",
             ".gitignore",
             "stars.json",
@@ -89,6 +90,13 @@ class ProjectLayoutTest(unittest.TestCase):
         self.assertIn("stars.json", workflow)
         self.assertIn('"repository": "flatkey-ai/how-to-use-flatkey"', stars)
         self.assertIn('"history"', stars)
+
+    def test_mit_license_is_present(self):
+        license_text = read("LICENSE")
+        readme = read("README.md")
+        self.assertIn("MIT License", license_text)
+        self.assertIn("Flatkey", license_text)
+        self.assertIn("[MIT](LICENSE)", readme)
 
 
 if __name__ == "__main__":

@@ -74,3 +74,7 @@ bash -n curl/chat.sh
 ## Star Monitoring
 
 This repository includes a GitHub Actions workflow that records the current GitHub star count in `stars.json` every day and on manual runs.
+
+## License
+
+[MIT](LICENSE)
