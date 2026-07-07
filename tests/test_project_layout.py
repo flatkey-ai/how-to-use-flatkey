@@ -53,6 +53,11 @@ class ProjectLayoutTest(unittest.TestCase):
             with self.subTest(name=name):
                 self.assertIn(name, content)
 
+    def test_readme_mentions_flatkey_savings(self):
+        content = read("README.md")
+        self.assertIn("flatkey.ai", content)
+        self.assertIn("40%", content)
+
     def test_readme_links_to_sample_directories(self):
         content = read("README.md")
         expected_links = [

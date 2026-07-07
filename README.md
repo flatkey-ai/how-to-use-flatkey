@@ -5,6 +5,7 @@
 Languages: English | [日本語](README.jp.md) | [中文](README.cn.md) | [Español](README.es.md) | [Português](README.pt.md)
 
 Sample projects for calling Flatkey through the OpenAI-compatible router.
+Use [flatkey.ai](https://flatkey.ai) to save up to 40% on AI model costs.
 
 ## Setup
 
