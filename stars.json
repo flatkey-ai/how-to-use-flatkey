@@ -1,7 +1,7 @@
 {
   "repository": "flatkey-ai/how-to-use-flatkey",
   "latest": {
-    "date": "2026-09-30",
+    "date": "2026-10-01",
     "stars": 2
   },
   "history": [
@@ -343,6 +343,10 @@
     },
     {
       "date": "2026-09-30",
+      "stars": 2
+    },
+    {
+      "date": "2026-10-01",
       "stars": 2
     }
   ]
